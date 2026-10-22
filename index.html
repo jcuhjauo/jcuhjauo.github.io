@@ -90,22 +90,20 @@
   }
 
   .bird-wrap {
-    flex-shrink: 0;
-    width: 108px;
-    animation: settle 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both;
-  }
+  flex-shrink: 0;
+  width: 170px;   /* 原本 108px */
+  animation: settle 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
 
-  .bird-wrap svg {
-    width: 100%;
-    height: auto;
-    animation: breathe 5.5s ease-in-out infinite;
-    transform-origin: 50% 85%;
-  }
+  .bird-wrap svg { width: 100%; height: auto; }
 
-  @media (prefers-reduced-motion: reduce) {
-    .bird-wrap svg { animation: none; }
-    .bird-wrap { animation: none; }
-  }
+.bird { transform-box: fill-box; transform-origin: 50% 90%; animation: breathe 5.5s ease-in-out infinite; }
+.bird-2 { animation-delay: -2.4s; }
+
+ @media (prefers-reduced-motion: reduce) {
+  .bird { animation: none; }
+  .bird-wrap { animation: none; }
+}
 
   @keyframes breathe {
     0%, 100% { transform: translateY(0) rotate(-1.5deg); }
@@ -356,12 +354,12 @@
   @media (max-width: 560px) {
     .hero { padding: 64px 0 56px; }
     .hero-top { gap: 18px; }
-    .bird-wrap { width: 76px; }
+    .bird-wrap { width: 120px; }
     .project { padding: 56px 0; }
     .project-body { padding: 22px 20px 26px; }
     footer { padding: 56px 0 40px; }
   }
-
+{/*
   .preview-security {
   background: linear-gradient(135deg, #3a4652 0%, #5c6b7a 100%);
   border: none;
@@ -369,7 +367,7 @@
   font-family: 'IBM Plex Mono', monospace;
   letter-spacing: 0.08em;
   font-size: 13px;
-}
+}*/}
 </style>
 </head>
 <body>
@@ -379,27 +377,51 @@
   <section class="hero">
     <div class="hero-top">
       <div class="bird-wrap" aria-hidden="true">
-        <svg viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg">
-          <ellipse cx="100" cy="150" rx="58" ry="55" fill="#5c6b7a"/>
-          <ellipse cx="100" cy="150" rx="58" ry="55" fill="url(#bodyfade)"/>
-          <circle cx="100" cy="82" r="46" fill="#f7efdd"/>
-          <path d="M100 82 Q 60 92 62 118 Q 78 132 100 128 Q 122 132 138 118 Q 140 92 100 82 Z" fill="#f7efdd" opacity="0"/>
-          <circle cx="86" cy="78" r="3.2" fill="#2b2a28"/>
-          <circle cx="87" cy="76.5" r="1" fill="#fff"/>
-          <path d="M78 92 Q88 100 78 108 Q68 104 70 96 Q72 92 78 92 Z" fill="#e3a857"/>
-          <path d="M70 68 L58 64 M72 74 L59 73 M76 80 L64 82" stroke="#c9a876" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
-          <path d="M44 148 Q30 152 34 168 Q42 172 50 162 Z" fill="#5c6b7a"/>
-          <path d="M156 148 Q170 152 166 168 Q158 172 150 162 Z" fill="#5c6b7a"/>
-          <path d="M84 200 L80 214 M84 200 L86 216 M84 200 L90 213" stroke="#c9853a" stroke-width="2.5" stroke-linecap="round"/>
-          <path d="M114 200 L110 214 M114 200 L116 216 M114 200 L120 213" stroke="#c9853a" stroke-width="2.5" stroke-linecap="round"/>
-          <defs>
-            <linearGradient id="bodyfade" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#f7efdd" stop-opacity="0.9"/>
-              <stop offset="45%" stop-color="#5c6b7a" stop-opacity="0"/>
-            </linearGradient>
-          </defs>
-        </svg>
-      </div>
+  <svg viewBox="0 0 330 220" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="bodyfadeA" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#f7efdd" stop-opacity="0.9"/>
+        <stop offset="45%" stop-color="#5c6b7a" stop-opacity="0"/>
+      </linearGradient>
+      <linearGradient id="bodyfadeB" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#f7efdd" stop-opacity="0.9"/>
+        <stop offset="45%" stop-color="#6b64a8" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+
+    <!-- 左：藍紫色身體 -->
+    <g class="bird bird-1">
+      <ellipse cx="90" cy="150" rx="58" ry="55" fill="#6b64a8"/>
+      <ellipse cx="90" cy="150" rx="58" ry="55" fill="url(#bodyfadeB)"/>
+      <circle cx="90" cy="82" r="46" fill="#f7efdd"/>
+      <circle cx="76" cy="78" r="3.2" fill="#2b2a28"/>
+      <circle cx="77" cy="76.5" r="1" fill="#fff"/>
+      <path d="M68 92 Q78 100 68 108 Q58 104 60 96 Q62 92 68 92 Z" fill="#e3a857"/>
+      <path d="M60 68 L48 64 M62 74 L49 73 M66 80 L54 82" stroke="#c9a876" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
+      <path d="M34 148 Q20 152 24 168 Q32 172 40 162 Z" fill="#6b64a8"/>
+      <path d="M146 148 Q160 152 156 168 Q148 172 140 162 Z" fill="#6b64a8"/>
+      <path d="M74 200 L70 214 M74 200 L76 216 M74 200 L80 213" stroke="#c9853a" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M104 200 L100 214 M104 200 L106 216 M104 200 L110 213" stroke="#c9853a" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+
+    <g transform="translate(150 22) scale(0.88)">
+    <!-- 右：灰藍色身體（原本那隻），略小、略低，像在旁邊 -->
+    <g class="bird bird-2" transform="translate(150 22) scale(0.88)">
+      <ellipse cx="100" cy="150" rx="58" ry="55" fill="#5c6b7a"/>
+      <ellipse cx="100" cy="150" rx="58" ry="55" fill="url(#bodyfadeA)"/>
+      <circle cx="100" cy="82" r="46" fill="#f7efdd"/>
+      <circle cx="114" cy="78" r="3.2" fill="#2b2a28"/>
+      <circle cx="115" cy="76.5" r="1" fill="#fff"/>
+      <path d="M122 92 Q112 100 122 108 Q132 104 130 96 Q128 92 122 92 Z" fill="#e3a857"/>
+      <path d="M130 68 L142 64 M128 74 L141 73 M124 80 L136 82" stroke="#c9a876" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
+      <path d="M44 148 Q30 152 34 168 Q42 172 50 162 Z" fill="#5c6b7a"/>
+      <path d="M156 148 Q170 152 166 168 Q158 172 150 162 Z" fill="#5c6b7a"/>
+      <path d="M84 200 L80 214 M84 200 L86 216 M84 200 L90 213" stroke="#c9853a" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M114 200 L110 214 M114 200 L116 216 M114 200 L120 213" stroke="#c9853a" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+    </g>
+  </svg>
+</div>
 
       <div class="name-block">
         <h1 class="name">趙誼臻</h1>
