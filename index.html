@@ -7,7 +7,7 @@
 <meta name="description" content="趙誼臻的個人作品集，正在往軟體工程師的路上前進。" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+TC:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+TC:wght@400;500;600&family=Noto+Serif+TC:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --paper: #fbf6ec;
@@ -139,22 +139,25 @@
   }
 
   .tagline {
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-weight: 500;
-    font-size: clamp(20px, 3.4vw, 26px);
-    color: var(--ink);
-    max-width: 30ch;
-    margin: 30px 0 26px;
-    line-height: 1.4;
-  }
+  font-family: 'Noto Serif TC', 'Fraunces', serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: clamp(26px, 4.6vw, 36px);
+  line-height: 1.45;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  margin: 30px 0 26px;
+}
 
-  .bio {
-    color: var(--ink-soft);
-    font-size: 16px;
-    max-width: 54ch;
-    margin: 0 0 34px;
-  }
+.bio {
+  font-family: 'Noto Serif TC', serif;
+  font-weight: 400;
+  color: var(--ink-soft);
+  font-size: 15.5px;
+  line-height: 1.95;
+  max-width: 34em;
+  margin: 0 0 34px;
+}
 
   .links-row {
     display: flex;
@@ -389,7 +392,7 @@
       </div>
     </div>
 
-    <p class="tagline">想把每一個想法，做成真的能用的東西。</p>
+   <p class="tagline">想把每一個想法，<br>做成真的能用的東西。</p>
 
     <p class="bio">
       目前正往軟體工程師的路上前進，喜歡把腦中的點子做成真的能跑起來的系統——從資料庫設計、後端 API 到前端介面，都想親手做過一輪。家裡養了兩隻牡丹鸚鵡，牠常在我寫程式的時候飛過來湊熱鬧，作品集裡的 ParrotCare，就是因為牠們而誕生的。
