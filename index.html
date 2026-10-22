@@ -378,49 +378,95 @@
     <div class="hero-top">
       <div class="bird-wrap" aria-hidden="true">
   <svg viewBox="0 0 330 220" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <linearGradient id="bodyfadeA" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#f7efdd" stop-opacity="0.9"/>
-        <stop offset="45%" stop-color="#5c6b7a" stop-opacity="0"/>
-      </linearGradient>
-      <linearGradient id="bodyfadeB" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#f7efdd" stop-opacity="0.9"/>
-        <stop offset="45%" stop-color="#6b64a8" stop-opacity="0"/>
-      </linearGradient>
-    </defs>
+  <defs>
+    <!-- 小隻身體：上白下藍 -->
+    <linearGradient id="bodyBlue" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f5f8fa"/>
+      <stop offset="25%" stop-color="#f5f8fa"/>
+      <stop offset="100%" stop-color="#3f64a8"/>
+    </linearGradient>
 
-    <!-- 左：藍紫色身體 -->
-    <g class="bird bird-1">
-      <ellipse cx="90" cy="150" rx="58" ry="55" fill="#6b64a8"/>
-      <ellipse cx="90" cy="150" rx="58" ry="55" fill="url(#bodyfadeB)"/>
-      <circle cx="90" cy="82" r="46" fill="#f7efdd"/>
-      <circle cx="76" cy="78" r="3.2" fill="#2b2a28"/>
-      <circle cx="77" cy="76.5" r="1" fill="#fff"/>
-      <path d="M68 92 Q78 100 68 108 Q58 104 60 96 Q62 92 68 92 Z" fill="#e3a857"/>
-      <path d="M60 68 L48 64 M62 74 L49 73 M66 80 L54 82" stroke="#c9a876" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
-      <path d="M34 148 Q20 152 24 168 Q32 172 40 162 Z" fill="#6b64a8"/>
-      <path d="M146 148 Q160 152 156 168 Q148 172 140 162 Z" fill="#6b64a8"/>
-      <path d="M74 200 L70 214 M74 200 L76 216 M74 200 L80 213" stroke="#c9853a" stroke-width="2.5" stroke-linecap="round"/>
-      <path d="M104 200 L100 214 M104 200 L106 216 M104 200 L110 213" stroke="#c9853a" stroke-width="2.5" stroke-linecap="round"/>
-    </g>
+    <!-- 大隻身體：上白下淡灰紫 -->
+    <linearGradient id="bodyBlueBig" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fafaf5"/>
+      <stop offset="30%" stop-color="#fafaf5"/>
+      <stop offset="100%" stop-color="#c4c6dc"/>
+    </linearGradient>
 
-    <g transform="translate(150 22) scale(0.88)">
-    <!-- 右：灰藍色身體（原本那隻），略小、略低，像在旁邊 -->
-    <g class="bird bird-2" transform="translate(150 22) scale(0.88)">
-      <ellipse cx="100" cy="150" rx="58" ry="55" fill="#5c6b7a"/>
-      <ellipse cx="100" cy="150" rx="58" ry="55" fill="url(#bodyfadeA)"/>
-      <circle cx="100" cy="82" r="46" fill="#f7efdd"/>
-      <circle cx="114" cy="78" r="3.2" fill="#2b2a28"/>
-      <circle cx="115" cy="76.5" r="1" fill="#fff"/>
-      <path d="M122 92 Q112 100 122 108 Q132 104 130 96 Q128 92 122 92 Z" fill="#e3a857"/>
-      <path d="M130 68 L142 64 M128 74 L141 73 M124 80 L136 82" stroke="#c9a876" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
-      <path d="M44 148 Q30 152 34 168 Q42 172 50 162 Z" fill="#5c6b7a"/>
-      <path d="M156 148 Q170 152 166 168 Q158 172 150 162 Z" fill="#5c6b7a"/>
-      <path d="M84 200 L80 214 M84 200 L86 216 M84 200 L90 213" stroke="#c9853a" stroke-width="2.5" stroke-linecap="round"/>
-      <path d="M114 200 L110 214 M114 200 L116 216 M114 200 L120 213" stroke="#c9853a" stroke-width="2.5" stroke-linecap="round"/>
-    </g>
-    </g>
-  </svg>
+    <!-- 大隻頭：上灰其他白 -->
+    <linearGradient id="headBig" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ebeae6"/>
+      <stop offset="50%" stop-color="#fcfcfa"/>
+      <stop offset="100%" stop-color="#fbfaf6"/>
+    </linearGradient>
+
+    <!-- 小隻頭：上灰其他白 -->
+    <linearGradient id="headSmall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d3d0cb"/>
+      <stop offset="50%" stop-color="#f8f6f0"/>
+      <stop offset="100%" stop-color="#fdfcf9"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 左：大隻，面向右 -->
+  <g class="bird bird-1">
+    <ellipse cx="90" cy="150" rx="58" ry="55" fill="url(#bodyBlueBig)"/>
+    <path d="M34 148 Q20 152 24 168 Q32 172 40 162 Z" fill="#4d607d"/>
+    <path d="M146 148 Q160 152 156 168 Q148 172 140 162 Z" fill="#4d607d"/>
+    <path d="M74 200 L70 214 M74 200 L76 216 M74 200 L80 213" stroke="#d6ccc9" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M104 200 L100 214 M104 200 L106 216 M104 200 L110 213" stroke="#d6ccc9" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- 頭 -->
+    <circle cx="90" cy="82" r="46" fill="url(#headBig)"/>
+    <circle cx="106" cy="80" r="5.5" fill="#2b2a28"/>
+    <circle cx="108" cy="77.5" r="1.8" fill="#fff"/>
+    <!-- 嘴 -->
+    <path d="M126 84 Q146 88 140 104 Q132 110 124 100 Z" fill="#ebc5bc"/>
+    <path d="M126 98 Q134 103 141 100" stroke="#a85d2e" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  </g>
+
+<!-- ========== 右：小隻，面向左 ========== -->
+<!-- 外層 g：負責「位置與大小」。translate(x y) 移動位置，scale 縮放。
+     不要把 transform 放在 .bird 上，會被呼吸動畫蓋掉 -->
+<g transform="translate(150 22) scale(0.88)">
+
+  <!-- 內層 g：負責「呼吸晃動動畫」（CSS 的 .bird / .bird-2） -->
+  <g class="bird bird-2">
+
+    <!-- 身體：橢圓，cx/cy 是中心點，rx/ry 是橫向/縱向半徑。
+         fill 用 bodyBlue 漸層（上白下藍），漸層定義在 <defs> 裡 -->
+    <ellipse cx="100" cy="150" rx="58" ry="55" fill="url(#bodyBlue)"/>
+
+    <!-- 左翅膀（畫面左側）：藍色，改 fill 可換翅膀顏色 -->
+    <path d="M44 148 Q30 152 34 168 Q42 172 50 162 Z" fill="#315894"/>
+
+    <!-- 右翅膀（畫面右側）：和左翅膀同色 -->
+    <path d="M156 148 Q170 152 166 168 Q158 172 150 162 Z" fill="#315894"/>
+
+    <!-- 左腳：三根腳趾（橘色線條），stroke 是顏色，stroke-width 是粗細 -->
+    <path d="M84 200 L80 214 M84 200 L86 216 M84 200 L90 213" stroke="#e6cac3" stroke-width="2.5" stroke-linecap="round"/>
+
+    <!-- 右腳：三根腳趾 -->
+    <path d="M114 200 L110 214 M114 200 L116 216 M114 200 L120 213" stroke="#e6cac3" stroke-width="2.5" stroke-linecap="round"/>
+
+    <!-- 頭：大圓，疊在身體上方。fill 用 headSmall 漸層（上灰其他白） -->
+    <circle cx="100" cy="82" r="46" fill="url(#headSmall)"/>
+
+    <!-- 眼睛：黑色圓，r 是大小（越大眼睛越大）。
+         鳥面向左，所以眼睛在頭的左半邊（cx 比 100 小） -->
+    <circle cx="84" cy="80" r="5.5" fill="#2b2a28"/>
+
+    <!-- 眼睛反光：白色小圓，讓眼睛有神。往左上偏移 -->
+    <circle cx="82" cy="77.5" r="1.8" fill="#fff"/>
+
+    <!-- 嘴（喙）：凸出頭部左邊的形狀，fill 是嘴的顏色（目前粉色） -->
+    <path d="M64 84 Q44 88 50 104 Q58 110 66 100 Z" fill="#ebc5bc"/>
+
+    <!-- 嘴線：嘴巴上的一條深色弧線，讓嘴看起來有張開的線條 -->
+    <path d="M64 98 Q56 103 49 100" stroke="#a85d2e" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+  </g>
+</g>
+</svg>
 </div>
 
       <div class="name-block">
